@@ -1,0 +1,322 @@
+.gas-view {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.gas-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.gas-header h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+.gas-header p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+.error-message {
+  background: #fee;
+  border: 1px solid #fcc;
+  color: #c33;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gas-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.country-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.country-selector label {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.country-selector select {
+  padding: 10px 15px;
+  border: 2px solid #e1e8ed;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  min-width: 150px;
+}
+
+.country-selector select:focus {
+  outline: none;
+  border-color: #e74c3c;
+}
+
+.gas-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.last-updated {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.refresh-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.refresh-btn:hover {
+  background: #c0392b;
+}
+
+.refresh-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.refresh-btn .spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+.loading i {
+  margin-right: 10px;
+}
+
+.gas-results {
+  margin-bottom: 30px;
+}
+
+.gas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.gas-card {
+  background: white;
+  border: 1px solid #e1e8ed;
+  border-radius: 12px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gas-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.gas-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.gas-card-header h3 {
+  color: #2c3e50;
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.currency-badge {
+  background: #e74c3c;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.price-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.price-item {
+  text-align: center;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.fuel-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: #6c757d;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.fuel-type i {
+  color: #e74c3c;
+}
+
+.price-value {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.price-unit {
+  color: #6c757d;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.no-data {
+  text-align: center;
+  padding: 40px;
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+.no-data i {
+  margin-right: 10px;
+  color: #e74c3c;
+}
+
+.gas-footer {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.price-legend {
+  margin-bottom: 20px;
+}
+
+.price-legend h4 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.legend-items {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.data-source {
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid #ecf0f1;
+}
+
+.data-source p {
+  color: #95a5a6;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .gas-view {
+    padding: 15px;
+  }
+  
+  .gas-header h2 {
+    font-size: 2rem;
+  }
+  
+  .gas-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .gas-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .price-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .legend-items {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .gas-card {
+    padding: 20px;
+  }
+  
+  .price-value {
+    font-size: 1.5rem;
+  }
+  
+  .gas-card-header h3 {
+    font-size: 1.1rem;
+  }
+}
+

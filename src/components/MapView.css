@@ -1,0 +1,276 @@
+.map-view {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.map-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.country-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.country-selector label {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.country-selector select {
+  padding: 10px 15px;
+  border: 2px solid #e1e8ed;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.country-selector select:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.data-type-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.data-type-filters h4 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.filter-checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+}
+
+.map-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: #f8f9fa;
+  color: #6c757d;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e9ecef;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-background {
+  text-align: center;
+  color: white;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  max-width: 600px;
+}
+
+.map-background h3 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.map-background p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.map-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  font-weight: 600;
+}
+
+.stat-icon {
+  font-size: 1.5rem;
+}
+
+.data-points-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.map-marker {
+  pointer-events: all;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.map-marker:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+  z-index: 1001 !important;
+}
+
+.map-info {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map-info h4 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.map-info ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.map-info li {
+  padding: 8px 0;
+  color: #34495e;
+  font-weight: 500;
+}
+
+.mapbox-integration-note {
+  background: #f8fbff;
+  border: 1px solid #e3f2fd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.mapbox-integration-note h5 {
+  color: #1976d2;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.mapbox-integration-note p {
+  color: #424242;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .map-view {
+    padding: 15px;
+  }
+  
+  .map-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .data-type-filters {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .map-container {
+    height: 400px;
+  }
+  
+  .map-background {
+    padding: 20px;
+  }
+  
+  .map-background h3 {
+    font-size: 2rem;
+  }
+  
+  .map-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-background h3 {
+    font-size: 1.5rem;
+  }
+  
+  .map-background p {
+    font-size: 1rem;
+  }
+  
+  .stat {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
