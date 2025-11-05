@@ -29,7 +29,7 @@ const ChatBot = ({ isOpen, onClose }) => {
 
   const fetchSuggestions = async () => {
     try {
-      const response = await fetch('/api/chat/suggestions');
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/chat/suggestions`);
       const data = await response.json();
       if (data.success) {
         setSuggestions(data.suggestions.slice(0, 6)); // Show first 6 suggestions
@@ -67,7 +67,7 @@ const ChatBot = ({ isOpen, onClose }) => {
         preferences: {}
       };
 
-      const response = await fetch('/api/chat', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

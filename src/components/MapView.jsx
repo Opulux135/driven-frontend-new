@@ -23,8 +23,7 @@ const MapView = ({ user, sessionToken }) => {
   const [selectedCountry, setSelectedCountry] = useState('Germany');
 
   // Backend API base URL
-  const API_BASE = 'https://5001-i3vglaadv30lrghuio8ib-9b5dbcea.manusvm.computer/api';
-
+  const API_BASE = `${import.meta.env.VITE_API_BASE_URL}/api`;
   // European countries for selection
   const europeanCountries = [
     'Germany', 'France', 'Italy', 'Spain', 'Netherlands', 'Belgium',

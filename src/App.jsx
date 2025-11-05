@@ -28,7 +28,7 @@ function App() {
 
   const verifySession = async (token) => {
     try {
-      const response = await fetch('http://localhost:5000/api/auth/user', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}`/api/auth/user`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -68,7 +68,7 @@ function App() {
   const handleLogout = async () => {
     try {
       // Call logout endpoint
-      await fetch('http://localhost:5000/api/auth/logout', {
+      await fetch(`${import.meta.env.VITE_API_BASE_URL}`/api/auth/logout`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${sessionToken}`
@@ -92,7 +92,7 @@ function App() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/payments/create-checkout-session', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}`/api/payments/create-checkout-session`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
