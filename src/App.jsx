@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import MapView from './components/MapView';
+import MapView from './components/MapView.jsx';
 import Header from './components/Header';
 import AuthModal from './components/AuthModal';
 import ChatBot from './components/ChatBot';
